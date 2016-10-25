@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="flag"
+            type="Boolean" />
+        <variable
+            name="myTest"
+            type="com.bigkoo.mvvmframeworkdemo.activity.MainActivity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="@{flag}"
+            android:onClick="@{(click) -> myTest.test(click)}"
+            android:text="测试" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(click) -> myTest.goneBtn(click)}"
+            android:text="隐藏测试按钮"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(click) -> myTest.getBtn(click)}"
+            android:text="显示测试按钮"/>
+    </LinearLayout>
+</layout>
